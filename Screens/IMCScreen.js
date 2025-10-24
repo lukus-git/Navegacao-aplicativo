@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Button } from 'react-native';
 
-export default function AboutScreen({ navigation }) {
+export default function IMCScreen({ navigation }) {
     return (
         <View style={estilos.container}>
             <Text style={estilos.texto}>Calculadora de IMC.</Text>
