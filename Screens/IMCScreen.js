@@ -6,27 +6,27 @@ export default function IMCScreen() {
     const [altura, setAltura] = useState('');
     const [resultado, setResultado] = useState('');
 
-    const calcula = () => {
-        const pesoPessoa = parseFloat(peso);
-        const alturaPessoa = parseFloat(altura);
-        const imc = pesoPessoa / (alturaPessoa * alturaPessoa);
-        setResultado(imc);
+   const calcula = () => {
+  const pesoPessoa = parseFloat(peso);
+  const alturaPessoa = parseFloat(altura);
+  const imc = pesoPessoa / (alturaPessoa * alturaPessoa);
+  let mensagem = '';
 
-        if (imc < 20.7) {
-            return imc + "Abaixo do peso";
-        }
-        if (imc < 26.4) {
-            return imc + "Peso ideal";
-        }
-        if (imc < 27.8) {
-            return imc + "Levemente acima do peso";
-        }
-        if (imc < 31.1) {
-            return imc + "obesidade";
-        } else {
-            return imc + "vc esta imensa";
-        }
-    };
+  if (imc < 20.7) {
+    mensagem = 'Abaixo do peso';
+  } else if (imc < 26.4) {
+    mensagem = 'Peso ideal';
+  } else if (imc < 27.8) {
+    mensagem = 'Levemente acima do peso';
+  } else if (imc < 31.1) {
+    mensagem = 'Obesidade';
+  } else {
+    mensagem = 'Você está imensa';
+  }
+
+  setResultado(`Seu IMC é ${imc} - ${mensagem}`);
+};
+
 
 
 
