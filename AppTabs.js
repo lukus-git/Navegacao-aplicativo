@@ -1,44 +1,44 @@
 import { NavigationContainer } from '@react-navigation/native'
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeScreen from "./Screens/HomeScreen";
-import CalculadoraScreen from './Screens/CalculadoraScreen';
-import IMCScreen from './Screens/IMCScreen';
+import CalculadoraScreen from "./Screens/CalculadoraScreen";
+import IMCScreen from "./Screens/IMCScreen";
 
-const Drawer = createDrawerNavigator()
+const Tab = createBottomTabNavigator()
 
 export default function App(){
-  return(
+ return(
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName='Home'>
-        <Drawer.Screen name='Home'
+      <Tab.Navigator initialRouteName='Home'>
+        <Tab.Screen name='Home'
           component={HomeScreen} 
           options={{
             title: 'Início',
-            drawerIcon: ({color, size}) => (
+            TabBarIcon: ({color, size}) => (
               <MaterialIcons  color={color} size={size} />
             )
           }}
           />
 
-        <Drawer.Screen name='Calculadora' component={CalculadoraScreen}
+        <Tab.Screen name='Calculadora' component={CalculadoraScreen}
           options={{
             title: 'Calculadora',
-            drawerIcon: ({color, size}) => (
+            TabBarIcon: ({color, size}) => (
               <MaterialIcons  color={color} size={size} />
             )
           }}
         />
         
-        <Drawer.Screen name='IMC' component={IMCScreen}
+        <Tab.Screen name='IMC' component={IMCScreen}
           options={{
             title: 'IMC',
-            drawerIcon: ({color, size}) => (
+            TabBarIcon: ({color, size}) => (
               <MaterialIcons color={color} size={size} />
             )
           }}
         />
-      </Drawer.Navigator>
+      </Tab.Navigator>
     </NavigationContainer>
   )
 }

@@ -21,10 +21,10 @@ export default function IMCScreen() {
   } else if (imc < 31.1) {
     mensagem = 'Obesidade';
   } else {
-    mensagem = 'Você está imensa';
+    mensagem = 'Você está imensa kkkkk';
   }
 
-  setResultado(`Seu IMC é ${imc} - ${mensagem}`);
+  setResultado(`Seu IMC é ${imc.toFixed(2)} - ${mensagem}`);
 };
 
 
